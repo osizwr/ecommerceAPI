@@ -1,6 +1,11 @@
 from django.db import models
 import uuid
 
+
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField(blank=True, null=True)
+
 class User(models.Model):
     userId = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     firstName = models.CharField(max_length=50)
